@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "deploy": "vercel --prod",
     "lint": "eslint . --ext .ts,.tsx",
     "test": "node -e \"console.log('No tests yet');\""
   },
@@ -17,13 +18,15 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
-    "@typescript-eslint/parser": "^7.18.0",
-    "@types/sanitize-html": "latest",
     "@types/node": "latest",
     "@types/react": "latest",
+    "@types/sanitize-html": "latest",
+    "@typescript-eslint/parser": "^7.18.0",
     "autoprefixer": "^10.4.19",
     "eslint": "^8.57.0",
     "eslint-config-next": "16.1.6",
+    "jpeg-js": "^0.4.4",
+    "pngjs": "^7.0.0",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.17",
     "typescript": "latest"
