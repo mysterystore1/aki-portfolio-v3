@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import type { Metadata } from 'next';
 import Container from '@/components/Container';
 import AutoTranslatedBadge from '@/components/AutoTranslatedBadge';
@@ -55,6 +55,9 @@ export default async function Home({
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
   const resolvedLocale = locale as Locale;
+
+  // ランディング（YouTube 等）をトップで表示
+  redirect(`/${resolvedLocale}/landing`);
 
   const [settings, works] = await Promise.all([getSettings(), getWorks()]);
 
