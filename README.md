@@ -2,6 +2,16 @@
 
 多言語（/jp /en）対応のポートフォリオサイトです。microCMSが未設定でもモックデータで動作します。
 
+## Git / プッシュ
+
+リモートを追加してプッシュする例（GitHub で新規リポジトリ作成後）:
+
+```bash
+git remote add origin https://github.com/あなたのユーザー名/aki-portfolio-v3.git
+git branch -M main
+git push -u origin main
+```
+
 ## セットアップ
 
 ```bash
