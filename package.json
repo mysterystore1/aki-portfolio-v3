@@ -1,0 +1,31 @@
+{
+  "name": "aki-portfolio",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint . --ext .ts,.tsx",
+    "test": "node -e \"console.log('No tests yet');\""
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "sanitize-html": "latest"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.10",
+    "@typescript-eslint/parser": "^7.18.0",
+    "@types/sanitize-html": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "autoprefixer": "^10.4.19",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "16.1.6",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.17",
+    "typescript": "latest"
+  }
+}

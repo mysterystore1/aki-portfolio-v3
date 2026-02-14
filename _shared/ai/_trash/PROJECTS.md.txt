@@ -1,0 +1,16 @@
+# PROJECTS
+
+## Akiポートフォリオサイト
+- 目的：（例）Web3系ポートフォリオサイト（JP/EN）をNext.jsで構築
+- 実行：npm i / npm run dev / npm run build
+- 触るな：.env, secrets, node_modules, dist/.next（自動生成物）
+
+## NEON SWARM
+- 目的：（例）Phaser+TSの見下ろしアクションを開発
+- 実行：npm i / npm run dev / npm run build
+- 触るな：.env, secrets, node_modules, dist
+
+## CL BOT
+- 目的：（例）Bot/自動化スクリプト運用
+- 実行：（例）python -m venv .venv / pip install -r requirements.txt / python main.py
+- 触るな：.env, keys, cookies, session, wallet関連ファイル

@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* デザイントークン（data-theme で上書き可能） */
+/* 本番: A+C ハイブリッド（A ベース + C の余白） */
+:root {
+  color-scheme: light;
+  --theme-bg: #ffffff;
+  --theme-bg-muted: #f8fafc;
+  --theme-text: #0b0f19;
+  --theme-text-muted: #475569;
+  --theme-accent: #0b0f19;
+  --theme-border: #e2e8f0;
+  --theme-card-bg: #ffffff;
+  --theme-section-y: 6rem;
+  --theme-block-gap: 1.75rem;
+  --theme-radius-card: 1.5rem;
+  --theme-radius-button: 9999px;
+  --theme-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+[data-theme="B"] {
+  color-scheme: dark;
+  --theme-bg: #0f0a1e;
+  --theme-bg-muted: #1a1229;
+  --theme-text: #f1f5f9;
+  --theme-text-muted: #94a3b8;
+  --theme-accent: #a78bfa;
+  --theme-border: rgba(167, 139, 250, 0.3);
+  --theme-card-bg: rgba(30, 27, 75, 0.6);
+  --theme-section-y: 4rem;
+  --theme-block-gap: 1.25rem;
+  --theme-radius-card: 1rem;
+  --theme-radius-button: 0.75rem;
+  --theme-shadow: 0 0 40px rgba(167, 139, 250, 0.15);
+}
+
+[data-theme="C"] {
+  color-scheme: light;
+  --theme-bg: #ffffff;
+  --theme-bg-muted: #fafafa;
+  --theme-text: #0c0c0c;
+  --theme-text-muted: #737373;
+  --theme-accent: #0c0c0c;
+  --theme-border: #e5e5e5;
+  --theme-card-bg: #ffffff;
+  --theme-section-y: 6rem;
+  --theme-block-gap: 2rem;
+  --theme-radius-card: 0.25rem;
+  --theme-radius-button: 0.25rem;
+  --theme-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+body {
+  background-color: var(--theme-bg);
+  color: var(--theme-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--theme-text);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.bg-grid {
+  background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* __design プレビュー用：data-theme の変数を子要素に適用 */
+.design-preview {
+  background-color: var(--theme-bg);
+  color: var(--theme-text);
+}
+.design-preview .design-card {
+  background-color: var(--theme-card-bg);
+  border-color: var(--theme-border);
+  border-radius: var(--theme-radius-card);
+  box-shadow: var(--theme-shadow);
+}
+.design-preview .design-muted {
+  color: var(--theme-text-muted);
+}
+.design-preview .design-accent-bg {
+  background-color: var(--theme-accent);
+}
+.design-preview .design-section {
+  padding-top: var(--theme-section-y);
+  padding-bottom: var(--theme-section-y);
+}
+.design-preview .design-btn {
+  border-radius: var(--theme-radius-button);
+}
+.design-preview a {
+  color: var(--theme-text);
+}
+.design-preview .design-bg-muted {
+  background-color: var(--theme-bg-muted);
+}
+.design-preview .design-border {
+  border-color: var(--theme-border);
+}
+.design-preview .design-placeholder {
+  background-color: var(--theme-border);
+  color: var(--theme-text-muted);
+}
