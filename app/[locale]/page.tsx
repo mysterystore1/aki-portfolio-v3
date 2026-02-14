@@ -256,10 +256,10 @@ export default async function Home({
               </div>
             </div>
           </div>
-          {highlights?.length ? (
+          {(highlights ?? []).length > 0 ? (
             <div className="mt-10 space-y-4">
               <div className="grid gap-4 sm:grid-cols-2">
-                {highlights.map((item, index) => (
+                {(highlights ?? []).map((item, index) => (
                   <div
                     key={`${item}-${index}`}
                     className="rounded-2xl border border-slate-100 bg-white px-4 py-3 text-sm font-semibold text-slate-600 shadow-sm"
