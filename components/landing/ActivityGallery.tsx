@@ -23,7 +23,6 @@ export default function ActivityGallery({ items }: { items: GalleryItem[] }) {
         return (
           <figure className="gallery-card" key={`${item.src}-${idx}`}>
             <div className="gallery-img-wrap">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={imgSrc}
                 alt={item.title}

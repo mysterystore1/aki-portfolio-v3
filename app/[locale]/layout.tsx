@@ -25,7 +25,7 @@ export async function generateMetadata({
     description:
       resolvedLocale === 'jp'
         ? 'Web3のKOL/MC/Community/BD/Contents領域で実績を持つAkiの多言語ポートフォリオ。'
-        : 'A bilingual portfolio for Web3 KOL/MC/Community/BD/Contents engagements.'
+        : 'JP/EN portfolio for Web3 hosting, AMA moderation, community growth, and content collaborations.'
   };
 }
 

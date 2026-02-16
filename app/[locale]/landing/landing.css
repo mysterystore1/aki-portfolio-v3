@@ -51,6 +51,17 @@
   letter-spacing: 0.03em;
 }
 .landing .nav-contact:hover { background: var(--rose-accent); }
+.landing .nav-actions { display: flex; align-items: center; gap: 0.5rem; }
+.landing .nav-lang {
+  background: var(--white);
+  color: var(--ink);
+  border: 1px solid var(--gray-light);
+}
+.landing .nav-lang:hover {
+  background: var(--blush-light);
+  border-color: var(--blush);
+  color: var(--rose-accent);
+}
 
 /* Hero */
 .landing .hero {
@@ -530,6 +541,8 @@
   .landing .gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .landing .past-grid { grid-template-columns: 1fr; }
   .landing .nav-links { display: none; }
+  .landing .nav-actions { gap: 0.4rem; }
+  .landing .nav-contact { padding: 0.45rem 0.9rem; }
   .landing .sec-heading { font-size: 1.6rem; }
   .landing .posts-header { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
   .landing .stats-inner { gap: 1rem; }

@@ -1,11 +1,10 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import type { Settings } from '@/lib/microcms';
-import { Locale, localeLabels, otherLocale, pickByLocale, withLocale } from '@/lib/i18n';
-import { trackEvent } from '@/lib/analytics';
+import { Locale, pickByLocale, withLocale } from '@/lib/i18n';
 import { copyPack } from '@/lib/copy-pack';
+import LanguageSwitchLink from '@/components/LanguageSwitchLink';
 
 export default function SiteHeader({
   locale,
@@ -14,10 +13,6 @@ export default function SiteHeader({
   locale: Locale;
   settings: Settings;
 }) {
-  const pathname = usePathname() || `/${locale}`;
-  const nextLocale = otherLocale(locale);
-  const switchPath = withLocale(pathname, nextLocale);
-
   const nav = copyPack.navigation.items.map((item) => ({
     href: withLocale(item.href, locale),
     label: pickByLocale(locale, item.label)
@@ -46,13 +41,12 @@ export default function SiteHeader({
           </a>
         </nav>
 
-        <Link
-          href={switchPath}
+        <LanguageSwitchLink
+          locale={locale}
           className="rounded-full border border-slate-200 px-3 py-1 text-xs font-semibold text-slate-700 hover:text-ink-900"
-          onClick={() => trackEvent('lang_switch', { to: nextLocale })}
-        >
-          {localeLabels[nextLocale]}
-        </Link>
+          labelMode="short"
+          trackContext="site_header"
+        />
       </div>
     </header>
   );

@@ -1,6 +1,8 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { isLocale, Locale } from '@/lib/i18n';
+import { buildAlternates } from '@/lib/seo';
+import { landingCopy } from '@/lib/landing-copy';
 import './landing.css';
 
 export async function generateMetadata({
@@ -10,10 +12,25 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
+
+  const resolvedLocale = locale as Locale;
+  const copy = landingCopy[resolvedLocale];
+
   return {
-    title: 'Aki — Japanese Crypto KOL / MC / Event Coordinator',
-    description:
-      'コスプレとコメディを交えた独自スタイルで、DeFi・チェーン・ブロックチェーンゲームをわかりやすく解説。日本でも数少ないユニーク性を持つクリプトKOLです。'
+    title: copy.meta.title,
+    description: copy.meta.description,
+    alternates: buildAlternates(resolvedLocale, `/${resolvedLocale}/landing`),
+    openGraph: {
+      title: copy.meta.title,
+      description: copy.meta.description,
+      url: `/${resolvedLocale}/landing`,
+      type: 'website'
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: copy.meta.title,
+      description: copy.meta.description
+    }
   };
 }
 
