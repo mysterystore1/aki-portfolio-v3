@@ -152,12 +152,28 @@
 .landing .btn-primary svg { width: 14px; height: 14px; fill: currentColor; }
 .landing .btn-ghost {
   font-family: 'Sora', sans-serif;
-  font-size: 0.75rem; font-weight: 500;
-  color: var(--ink-soft); text-decoration: none;
+  font-size: 0.75rem; font-weight: 600;
+  padding: 0.65rem 1.4rem;
+  background: #fff5f7;
+  border: 1px solid #ffccd8;
+  border-radius: 22px;
+  color: #c81e4f; text-decoration: none;
   display: inline-flex; align-items: center; gap: 0.3rem;
-  transition: color 0.3s;
+  transition: all 0.3s;
 }
-.landing .btn-ghost:hover { color: var(--rose-accent); }
+.landing .btn-ghost .yt-icon {
+  width: 14px;
+  height: 14px;
+  fill: #ff0033;
+  flex-shrink: 0;
+}
+.landing .btn-ghost:hover {
+  color: var(--white);
+  background: #ff0033;
+  border-color: #ff0033;
+  transform: translateY(-1px);
+}
+.landing .btn-ghost:hover .yt-icon { fill: var(--white); }
 .landing .hero-visual { position: relative; display: flex; justify-content: center; align-items: center; animation: fadeIn 0.8s ease 0.4s both; }
 .landing .photo-frame {
   width: 320px; height: 400px;
@@ -477,6 +493,10 @@
   font-size: 0.75rem; font-weight: 600;
   padding: 0.65rem 1.6rem;
   border-radius: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
   text-decoration: none; transition: all 0.3s;
   letter-spacing: 0.02em;
 }
@@ -484,6 +504,23 @@
 .landing .cta-btn.fill:hover { background: var(--rose-accent); transform: translateY(-1px); }
 .landing .cta-btn.line { border: 1px solid var(--gray-light); color: var(--ink-soft); }
 .landing .cta-btn.line:hover { border-color: var(--blush); color: var(--rose-accent); }
+.landing .cta-btn-youtube {
+  border-color: #ffccd8;
+  color: #c81e4f;
+  background: #fff5f7;
+}
+.landing .cta-btn-youtube .yt-icon {
+  width: 13px;
+  height: 13px;
+  fill: #ff0033;
+  flex-shrink: 0;
+}
+.landing .cta-btn-youtube:hover {
+  border-color: #ff0033;
+  background: #ff0033;
+  color: var(--white);
+}
+.landing .cta-btn-youtube:hover .yt-icon { fill: var(--white); }
 
 .landing footer { background: var(--white); padding: 1.5rem 2rem; text-align: center; border-top: 1px solid var(--gray-light); }
 .landing footer p { font-family: 'Sora', sans-serif; font-size: 0.6rem; color: var(--gray); letter-spacing: 0.08em; }

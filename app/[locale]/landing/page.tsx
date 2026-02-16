@@ -26,6 +26,12 @@ const XIcon = () => (
   </svg>
 );
 
+const YouTubeIcon = () => (
+  <svg viewBox="0 0 24 24" className="yt-icon" aria-hidden>
+    <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.2 31.2 0 0 0 0 12a31.2 31.2 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.2 31.2 0 0 0 24 12a31.2 31.2 0 0 0-.5-5.8zM9.6 15.6V8.4L16 12l-6.4 3.6z" />
+  </svg>
+);
+
 function truncateTweetText(text: string, maxLen = 110): string {
   const compact = text.replace(/\s+/g, ' ').trim();
   if (compact.length <= maxLen) return compact;
@@ -166,7 +172,7 @@ export default async function LandingPage({
                 rel="noopener noreferrer"
                 className="btn-ghost"
               >
-                {copy.hero.youtubeCta}
+                <YouTubeIcon /> {copy.hero.youtubeCta}
               </a>
             </div>
           </div>
@@ -385,11 +391,11 @@ export default async function LandingPage({
           </a>
           <a
             href={YOUTUBE_CHANNEL_URL}
-            className="cta-btn line"
+            className="cta-btn line cta-btn-youtube"
             target="_blank"
             rel="noopener noreferrer"
           >
-            {copy.cta.youtube}
+            <YouTubeIcon /> {copy.cta.youtube}
           </a>
           <a
             href={STAKESTONE_URL}
