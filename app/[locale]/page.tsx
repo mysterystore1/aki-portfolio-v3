@@ -1,6 +1,6 @@
 import { notFound, redirect } from 'next/navigation';
 import type { Metadata } from 'next';
-import { buildAlternates } from '@/lib/seo';
+import { buildAlternates, buildOgImage, buildTwitterImages } from '@/lib/seo';
 import { isLocale, type Locale } from '@/lib/i18n';
 import { landingCopy } from '@/lib/landing-copy';
 
@@ -23,12 +23,14 @@ export async function generateMetadata({
       title: copy.title,
       description: copy.description,
       url: `/${resolvedLocale}`,
-      type: 'website'
+      type: 'website',
+      images: buildOgImage()
     },
     twitter: {
       card: 'summary_large_image',
       title: copy.title,
-      description: copy.description
+      description: copy.description,
+      images: buildTwitterImages()
     }
   };
 }

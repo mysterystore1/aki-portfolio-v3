@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { isLocale, Locale } from '@/lib/i18n';
-import { buildAlternates } from '@/lib/seo';
+import { buildAlternates, buildOgImage, buildTwitterImages } from '@/lib/seo';
 import { landingCopy } from '@/lib/landing-copy';
 import './landing.css';
 
@@ -24,12 +24,14 @@ export async function generateMetadata({
       title: copy.meta.title,
       description: copy.meta.description,
       url: `/${resolvedLocale}/landing`,
-      type: 'website'
+      type: 'website',
+      images: buildOgImage()
     },
     twitter: {
       card: 'summary_large_image',
       title: copy.meta.title,
-      description: copy.meta.description
+      description: copy.meta.description,
+      images: buildTwitterImages()
     }
   };
 }
