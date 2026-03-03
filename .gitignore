@@ -26,3 +26,15 @@ Thumbs.db
 
 # misc
 .vercel
+
+# IDE / AI tools
+.claude/
+.cursor/
+_shared/
+.cursorrules
+AGENTS.md
+
+# temp / logs
+*.log
+*.tmp
+tsconfig.tsbuildinfo

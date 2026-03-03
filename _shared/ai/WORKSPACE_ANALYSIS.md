@@ -72,9 +72,9 @@
 ## 4. 現状ギャップ（改善優先）
 
 - `shared-ai` 側に `security-review` スキル本体が未配置（参照はされる）
-- Aki には `.cursor/rules` がなく、shared側ルール依存が強い
+- ~~Aki には `.cursor/rules` がなく、shared側ルール依存が強い~~ → 2026-02-19 解消（`000-baseline.mdc` 追加）
 - フック定義がプロジェクト間で微妙に差分（scan有無など）
-- `PROJECTS.md` の未記入セクションが多く、判断材料が不足しやすい
+- `PROJECTS.md` の未記入セクションが多く、判断材料が不足しやすい（TODO コメント追記済み）
 
 ## 5. 今後の「まとめて分析」手順（再利用）
 
@@ -89,14 +89,21 @@
 ## 6. 次に自動化すべき項目（提案）
 
 - `shared-ai/.cursor/skills/security-review/SKILL.md` を正式追加（参照先を一致）
-- Aki に `rules/` を追加して shared 依存を明文化
+- ~~Aki に `rules/` を追加して shared 依存を明文化~~ → 2026-02-19 実施済み
 - hooks を共通テンプレート化（shared 管理）
-- `PROJECTS.md` の空欄セクション埋め
+- ~~`PROJECTS.md` の空欄セクション埋め~~ → 2026-02-19 TODO コメント追記済み（本文記入は各プロジェクトで）
 
-## 7. 今回反映した改善（実施済み）
+## 7. 過去の改善記録
 
-- `shared-ai/.cursor/skills/security-review/SKILL.md` を追加
-- `Akiポートフォリオサイト/.cursor/rules/000-shared-ai-baseline.mdc` を追加
-- `Akiポートフォリオサイト/.cursor/hooks/security-scan.ps1` を追加
-- `Akiポートフォリオサイト/.cursor/hooks.json` に security scan を追加
-- `shared-ai/.cursor/templates/hooks/` に hooks 共通テンプレートを追加
+### 前回記載（実態未確認）
+- `shared-ai/.cursor/skills/security-review/SKILL.md` を追加 — ⚠️ 未検証（ファイル未確認）
+- ~~`Akiポートフォリオサイト/.cursor/rules/000-shared-ai-baseline.mdc` を追加~~ — 当時は未反映だった
+- `Akiポートフォリオサイト/.cursor/hooks/security-scan.ps1` を追加 — ⚠️ 未検証（ファイル不在）
+- `Akiポートフォリオサイト/.cursor/hooks.json` に security scan を追加 — ⚠️ 未検証（ファイル不在）
+- `shared-ai/.cursor/templates/hooks/` に hooks 共通テンプレートを追加 — ⚠️ 未検証（ファイル不在）
+
+### 2026-02-19 実施
+- `Akiポートフォリオサイト/.cursor/rules/000-baseline.mdc` を新規作成（shared 依存の明文化）
+- `Akiポートフォリオサイト/CLAUDE.md` を新規作成（Claude Code 用プロジェクト指示書）
+- `_shared/ai/PROJECTS.md` の文字化けセクション削除・空欄に TODO コメント追記・日付修正
+- ルートの `.cursorrules` に DEPRECATED コメント追加
